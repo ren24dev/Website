@@ -558,3 +558,57 @@ nav ul li a:hover::after {
     font-size: 16px;
   }
 }
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center everything inside main */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content-box {
+  max-width: 800px;
+  width: 90%;        /* shrink to fit small screens */
+  margin: 0 auto;    /* center horizontally */
+  text-align: left;  /* keep text readable */
+}
+
+/* Three boxes layout */
+.three-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.three-boxes .content-box {
+  flex: 1 1 300px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Footer fix */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center all footer sections */
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.footer-left, .footer-middle, .footer-right {
+  flex: 1 1 250px;
+  text-align: center;
+}
