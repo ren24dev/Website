@@ -17,6 +17,7 @@
             <h1>OFW Children</h1>
         </div>
         <nav>
+          <button class="menu-toggle">☰</button>
             <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="ofw.html">OFW</a></li>
@@ -145,7 +146,14 @@
                 </div>
             </div>
         </footer>   
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector("nav ul");
 
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  </script>
 </body>
 
 </html>

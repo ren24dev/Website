@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viweport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OFW Children</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,6 +17,7 @@
             <h1>OFW Children</h1>
         </div>
         <nav>
+            <button class="menu-toggle">☰</button>
             <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="ofw.html">OFW</a></li>
@@ -28,6 +29,13 @@
             <li><a href="references.html">References</a></li>
             </ul>
         </nav>
+        <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        </script>
     </header>
 
     <main>
@@ -95,10 +103,8 @@
             </div>
         </footer>   
 
-
+        
 
 </body>
-
-
 
 </html>

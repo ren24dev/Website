@@ -11,7 +11,7 @@ html {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-     min-height: 100%;
+    min-height: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url("images/airport.png");
     background-attachment: fixed; 
     background-size: cover;  
@@ -20,57 +20,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
-  }
-  nav ul li a {
-    font-size: 16px;
-  }
-  .hero {
-    padding: 0 20px;
-    justify-content: center;
-    text-align: center;
-  }
-  .hero-text h1 {
-    font-size: 50px;
-  }
-  .hero-text p {
-    font-size: 18px;
-  }
-  .btn {
-    font-size: 16px;
-    padding: 12px 30px;
-  }
-  .page-title h1 {
-    font-size: 40px;
-  }
-  .page-title p {
-    font-size: 18px;
-  }
-  .content-box {
-    flex: 1 1 90%;
-    max-width: 90%;
-    padding: 25px;
-    text-align: center;
-  }
-  .content-box h2 {
-    font-size: 28px;
-  }
-  .content-box p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  .footer-left h3,
-  .footer-middle h4,
-  .footer-right h4 {
-    font-size: 25px;
-  }
+    body {
+        background-attachment: scroll;
+    }
 }
 
 header {
@@ -381,4 +333,82 @@ nav ul li a:hover::after {
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .logo h1 {
+    font-size: 36px;
+  }
 
+  nav ul {
+    gap: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 70px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 12px 30px;
+    font-size: 18px;
+  }
+
+  .content-box h2 {
+    font-size: 28px;
+  }
+
+  .content-box h3 {
+    font-size: 24px;
+  }
+
+  .content-box p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    display: none; /* hidden by default on mobile */
+  }
+
+  nav ul.show {
+    display: flex; /* shown when toggled */
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .content-box {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
