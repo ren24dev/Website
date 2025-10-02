@@ -514,3 +514,47 @@ nav ul li a:hover::after {
     font-size: 16px;
   }
 }
+
+.footer {
+  width: 100%;
+  overflow-x: hidden;  /* prevent side scroll */
+  box-sizing: border-box;
+}
+
+.footer-container {
+  flex-direction: column;  
+  align-items: center;    
+  text-align: center;
+  gap: 20px;
+  width: 100%;        
+}
+
+@media (max-width: 768px) {
+
+  .three-boxes {
+    display: flex;
+    flex-direction: column;  /* force vertical stacking */
+    align-items: center;     /* center horizontally */
+    gap: 20px;               /* space between boxes */
+  }
+
+  .content-box {
+    flex: none;              /* disable flex growth/shrink */
+    width: 90%;              /* fit within screen */
+    max-width: 400px;        /* keep a nice limit */
+    margin: 0 auto;          /* center */
+    text-align: center;      /* optional for readability */
+  }
+
+  .content-box h2 {
+    font-size: 24px;
+  }
+
+  .content-box h3 {
+    font-size: 20px;
+  }
+
+  .content-box p {
+    font-size: 16px;
+  }
+}
