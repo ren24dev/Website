@@ -11,12 +11,66 @@ html {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    height: 100vh; 
+     min-height: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url("images/airport.png");
     background-attachment: fixed; 
     background-size: cover;  
     background-position: center; 
     background-repeat: no-repeat; 
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+  .hero {
+    padding: 0 20px;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-text h1 {
+    font-size: 50px;
+  }
+  .hero-text p {
+    font-size: 18px;
+  }
+  .btn {
+    font-size: 16px;
+    padding: 12px 30px;
+  }
+  .page-title h1 {
+    font-size: 40px;
+  }
+  .page-title p {
+    font-size: 18px;
+  }
+  .content-box {
+    flex: 1 1 90%;
+    max-width: 90%;
+    padding: 25px;
+    text-align: center;
+  }
+  .content-box h2 {
+    font-size: 28px;
+  }
+  .content-box p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .footer-left h3,
+  .footer-middle h4,
+  .footer-right h4 {
+    font-size: 25px;
+  }
 }
 
 header {
@@ -326,3 +380,5 @@ nav ul li a:hover::after {
   overflow-wrap: break-word;
   text-align: center;
 }
+
+
