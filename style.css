@@ -1160,3 +1160,40 @@ nav ul.show {
     display: flex;             /* show box when toggled */
   }
 }
+
+.lang-btn {
+  display: inline-block;
+  padding: 6px 16px;  /* slightly smaller */
+  background: #ffcc00; 
+  color: black;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;   /* readable font */
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.lang-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.lang-btn:hover::before {
+  width: 200%;
+  height: 200%;
+}
+
+.lang-btn:hover {
+  transform: scale(1.05);
+  background: #e6b800;
+}
