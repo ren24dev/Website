@@ -1140,7 +1140,6 @@ nav ul.show {
   }
 }
 
-@media (max-width: 768px) {
   nav ul {
     margin: 30px ;           /* space below header */
     position: absolute;        /* overlay content */
