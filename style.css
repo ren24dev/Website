@@ -1197,3 +1197,34 @@ nav ul.show {
   transform: scale(1.05);
   background: #e6b800;
 }
+
+nav ul {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;             /* make full width */
+    background: rgba(0, 0, 0, 0.9); /* full-width dark background */
+    position: absolute;
+    top: 80px;               /* below header */
+    left: 0;                 /* align to left edge */
+    padding: 20px 0;
+    text-align: center;      /* center links */
+    box-sizing: border-box;
+    z-index: 2000;
+    border-radius: 0;        /* optional: remove if previously rounded */
+}
+
+nav ul.show {
+    display: flex;           /* toggle visible */
+}
+
+header {
+    position: relative;
+    z-index: 1000;
+}
+
+nav ul li a {
+    display: block;          /* full width clickable */
+    padding: 12px 0;
+    font-size: 20px;         /* readable on mobile */
+}
