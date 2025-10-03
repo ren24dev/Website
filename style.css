@@ -938,8 +938,9 @@ nav ul.show {
 }
 
 .language-switch {
-  text-align: center;
-  margin: 20px 0;       /* space between nav and button */
+  position: relative;  /* default */
+  z-index: 1;          /* lower than nav */
+  margin: 20px 0;
 }
 
 #lang-btn {
