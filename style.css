@@ -1006,3 +1006,43 @@ nav ul.show {
   text-align: center;
   margin: 20px 0;
 }
+
+@media (max-width: 768px) {
+  nav ul {
+    position: fixed;         /* stay on top of everything */
+    top: 0;
+    left: 0;
+    width: 100%;             /* full width */
+    height: 100vh;           /* full height */
+    background: rgba(0, 0, 0, 0.95); /* dark overlay */
+    flex-direction: column;  /* stack items */
+    justify-content: center; /* center vertically */
+    align-items: center;     /* center horizontally */
+    gap: 40px;               /* spacing between links */
+    display: none;           /* hidden by default */
+    z-index: 9999;           /* above everything */
+    padding: 0;              /* remove default padding */
+  }
+
+  nav ul.show {
+    display: flex;           /* show menu when toggled */
+  }
+
+  nav ul li {
+    width: 100%;             /* full width clickable */
+    text-align: center;      /* center text */
+  }
+
+  nav ul li a {
+    font-size: 26px;         /* bigger text for mobile */
+    color: #fff;
+    padding: 15px 0;
+    display: block;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    z-index: 10000;          /* ensure toggle button stays above menu */
+    position: relative;
+  }
+}
