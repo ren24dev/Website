@@ -1169,7 +1169,7 @@ nav ul.show {
   font-weight: bold;
   border-radius: 6px;
   text-decoration: none;
-  font-size: 16px;   /* readable font */
+  font-size: 17px;   /* readable font */
   position: relative;
   overflow: hidden;
   transition: 0.3s ease;
