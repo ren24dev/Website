@@ -936,3 +936,31 @@ nav ul.show {
   background: rgba(0,0,0,0.7);
   box-sizing: border-box;
 }
+
+.language-switch {
+  text-align: center;
+  margin: 20px 0;       /* space between nav and button */
+}
+
+#lang-btn {
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #ffcc00;
+  color: black;
+  transition: 0.3s ease;
+  animation: fadeIn 1s ease;
+}
+
+#lang-btn:hover {
+  background: #e6b800;
+  transform: translateY(-2px) scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
