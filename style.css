@@ -612,3 +612,302 @@ main {
   flex: 1 1 250px;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    display: none; /* hidden by default on mobile */
+    background: rgba(0, 0, 0, 0.85); /* add dark translucent background */
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 80px; /* below header */
+    right: 20px; /* align menu */
+    width: 200px; /* adjust width as needed */
+    z-index: 1000; /* make sure it appears on top */
+  }
+
+  nav ul li a {
+    color: #ffcc00; /* make links visible on dark bg */
+    font-size: 18px;
+    display: block;
+    padding: 10px 0;
+  }
+
+  nav ul.show {
+    display: flex; /* show when toggled */
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    background: #ffcc00; /* visible toggle button */
+    color: #000;
+    border: none;
+    font-size: 24px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+}
+
+.content-box {
+  max-width: 1000px; /* increase from 800px */
+  width: 90%;        /* still shrink on smaller screens */
+  margin: 0 auto;    /* center horizontally */
+}
+
+@media (max-width: 768px) {
+  .content-box {
+    width: 100%;        /* almost full width */
+    max-width: 500px;  /* increase from 400px */
+  }
+}
+
+.three-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* reduce from 20px if needed */
+}
+
+.footer {
+  width: 100%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;      /* stack vertically */
+    align-items: center;         /* center horizontally */
+    text-align: center;
+    gap: 20px;                   /* space between sections */
+    padding: 20px;               /* reduce side padding */
+    width: 100%;                 /* full width */
+    margin: 0 auto;
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    flex: none;                  /* disable flex-grow/shrink */
+    width: 100%;                 /* occupy full container width */
+    max-width: 500px;            /* optional: limit width */
+    margin: 0 auto;
+    text-align: center;          /* center content */
+  }
+
+  .footer-left h3,
+  .footer-middle h4,
+  .footer-right h4 {
+    font-size: 20px;             /* adjust size for mobile */
+    margin-bottom: 10px;
+  }
+
+  .footer p, .footer ul li {
+    font-size: 16px;             /* readable text on mobile */
+  }
+
+  .footer ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer ul li {
+    margin-bottom: 6px;
+  }
+}
+
+/* Mobile navigation fix */
+@media (max-width: 768px) {
+  nav {
+    position: relative; /* keep header context */
+    z-index: 1000;      /* above main content */
+  }
+
+  nav ul {
+    display: none;                /* hidden by default */
+    flex-direction: column;
+    gap: 10px;                     /* reduce spacing */
+    position: fixed;               /* FIX: overlay on top of content */
+    top: 80px;                     /* below header (header height) */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow-y: auto;             /* allow scrolling if menu too tall */
+    max-height: calc(100vh - 80px); /* never exceed viewport */
+  }
+
+  nav ul.show {
+    display: flex;                /* show menu when toggled */
+  }
+
+  nav ul li a {
+    font-size: 18px;
+    padding: 12px 20px;           /* enough touch space */
+    display: block;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1100;               /* above menu */
+  }
+}
+
+/* Make header fixed */
+header {
+  position: relative;        /* FIX: always on top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;          /* above all content */
+}
+
+/* Push main content below header */
+main {
+  padding-top: 120px;      /* adjust based on header height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Mobile nav menu */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;               /* overlay on top */
+    top: 80px;                     /* below fixed header */
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.95);
+    padding: 10px 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: calc(100vh - 80px);
+    z-index: 1100;                 /* above main content */
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+    padding: 12px 20px;
+    display: block;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1200; /* above nav menu */
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    padding-top: 100px; /* adjust depending on header height */
+  }
+
+  .page-title h1, 
+  .page-title p {
+    text-align: center; /* optional: keep it centered */
+  }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Footer full width */
+.footer {
+    width: 100vw;           /* full viewport width */
+    margin: 0;              /* remove any margin */
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    color: #fff;
+}
+
+/* Footer container spans full width */
+.footer-container {
+    width: 100%;
+    max-width: 1200px;      /* optional, limits content width */
+    margin: 0 auto;         /* center horizontally */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 0 10px;        /* optional: small padding inside */
+}
+
+/* Make first page content box same size as other pages */
+.hero .content-box {
+    width: 90%;            /* same width as other pages */
+    max-width: 800px;      /* same max width */
+    padding: 30px;         /* same padding */
+    margin: 0 auto;        /* center horizontally */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    text-align: justify;
+    flex: 1 1 800px;       /* ensure it behaves like other pages' boxes */
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* center the box horizontally */
+    padding: 20px;            /* reduce padding for consistency */
+}
+
+#lang-toggle {
+    position: relative;       /* stays visible */
+    top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #ffcc00;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;        /* ensures it stays above content */
+}
+
+#lang-toggle:hover {
+    background: #e6b800;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+#lang-toggle:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
