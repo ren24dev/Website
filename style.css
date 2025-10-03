@@ -979,7 +979,7 @@ header {
   z-index: 1000;           /* higher than the button */
 }
 
-header {
+.header {
   position: relative;   /* keeps nav and toggle in correct stack */
   z-index: 1000;        /* high so it's above normal page elements */
 }
@@ -1009,40 +1009,154 @@ nav ul.show {
 
 @media (max-width: 768px) {
   nav ul {
-    position: fixed;         /* stay on top of everything */
-    top: 0;
+    position: fixed;           /* overlay menu */
+    top: 80px;                 /* below header */
     left: 0;
-    width: 100%;             /* full width */
-    height: 100vh;           /* full height */
-    background: rgba(0, 0, 0, 0.95); /* dark overlay */
-    flex-direction: column;  /* stack items */
-    justify-content: center; /* center vertically */
-    align-items: center;     /* center horizontally */
-    gap: 40px;               /* spacing between links */
-    display: none;           /* hidden by default */
-    z-index: 9999;           /* above everything */
-    padding: 0;              /* remove default padding */
+    width: 100vw;              /* full screen width */
+    background: rgba(0,0,0,0.95); /* dark background */
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 0;           /* spacing top & bottom */
+    display: none;
+    text-align: center;
+    z-index: 999;              /* above all content */
   }
 
   nav ul.show {
-    display: flex;           /* show menu when toggled */
-  }
-
-  nav ul li {
-    width: 100%;             /* full width clickable */
-    text-align: center;      /* center text */
+    display: flex;
   }
 
   nav ul li a {
-    font-size: 26px;         /* bigger text for mobile */
-    color: #fff;
+    font-size: 22px;
+    color: #ffcc00;            /* keep your yellow hover color */
+    text-decoration: none;
     padding: 15px 0;
     display: block;
+    position: relative;
+  }
+
+  nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #ffcc00;
+    transition: width 0.4s ease;
+  }
+
+  nav ul li a:hover::after {
     width: 100%;
   }
 
   .menu-toggle {
-    z-index: 10000;          /* ensure toggle button stays above menu */
-    position: relative;
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #ffcc00;            /* yellow toggle */
+    cursor: pointer;
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 768px) {
+
+  nav ul {
+    position: absolute;       /* dropdown below the header */
+    top: 100%;               /* right below the header */
+    left: 50%;               /* start from the center */
+    transform: translateX(-50%);  /* center it horizontally */
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 40px;
+    border-radius: 12px;
+    display: none;
+    text-align: center;
+    z-index: 9999;
+    min-width: 200px;        /* optional: minimum width */
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+    color: #ffcc00;
+    padding: 8px 0;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #ffcc00;
+    cursor: pointer;
+    z-index: 10000;
+  }
+}
+
+@media (max-width: 768px) {
+
+  nav ul {
+    position: absolute;
+    top: 100%;              
+    left: 0;                
+    width: 100vw;           /* full viewport width */
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;        /* top/bottom padding only */
+    display: none;
+    text-align: center;
+    z-index: 9999;
+    border-radius: 0;       /* remove rounding to match edges */
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+    color: #ffcc00;
+    padding: 10px 0;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #ffcc00;
+    cursor: pointer;
+    z-index: 10000;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    margin: 30px ;           /* space below header */
+    position: absolute;        /* overlay content */
+    top: 100%;                 /* just below the header */
+    left: 50%;                 /* start from center */
+    transform: translateX(-50%); /* truly center horizontally */
+    width: 95%;                /* adjust width as needed */
+    background: rgba(0, 0, 0, 0.95); /* the box background */
+    border-radius: 10px;       /* optional rounded corners */
+    flex-direction: column;    /* stack items vertically */
+    display: none;             /* hidden by default, toggle with JS */
+    z-index: 999;              /* stay above other content */
+    padding: 15px 0;           /* space inside box */
+  }
+
+  nav ul.show {
+    display: flex;             /* show box when toggled */
   }
 }
