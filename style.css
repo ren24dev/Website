@@ -978,3 +978,31 @@ header {
   position: relative;      /* important */
   z-index: 1000;           /* higher than the button */
 }
+
+header {
+  position: relative;   /* keeps nav and toggle in correct stack */
+  z-index: 1000;        /* high so it's above normal page elements */
+}
+
+nav ul {
+  position: absolute;   /* for mobile dropdown */
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.95);
+  display: none;        /* hidden by default */
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1010;        /* make nav dropdown above language button */
+}
+
+nav ul.show {
+  display: flex;
+}
+
+.language-container {
+  position: relative;  
+  z-index: 1;           /* below nav */
+  text-align: center;
+  margin: 20px 0;
+}
