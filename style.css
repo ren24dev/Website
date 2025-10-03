@@ -1227,3 +1227,42 @@ nav ul li a {
     padding: 12px 0;
     font-size: 20px;         /* readable on mobile */
 }
+
+@media (max-width: 768px) {
+
+  nav {
+    position: relative; /* so nav ul absolute is relative to nav */
+  }
+
+  nav ul {
+    position: absolute;
+    top: 100%;            /* below the header */
+    left: 0;
+    width: 100%;          /* full width */
+    display: none;        /* hidden by default */
+    flex-direction: column;
+    background: rgba(0,0,0,0.95);
+    padding: 20px 0;
+    margin: 0;
+    text-align: center;
+    z-index: 2000;        /* above other content */
+    box-sizing: border-box;
+    border-radius: 0;     /* optional */
+  }
+
+  nav ul.show {
+    display: flex;        /* show when toggled */
+  }
+
+  nav ul li a {
+    display: block;       /* fill width */
+    padding: 13px 0;
+    font-size: 16px;
+  }
+}
+
+header {
+    position: relative;   /* so nav ul absolute positions correctly */
+    flex-direction: row;  /* normal for desktop */
+    z-index: 1000;
+}
