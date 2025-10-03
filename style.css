@@ -911,3 +911,18 @@ body {
     transform: translateY(0) scale(0.98);
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
+
+.three-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.content-box {
+  flex: 1 1 300px; /* flex-grow, flex-shrink, flex-basis */
+  max-width: 401px; 
+  margin: 0 auto;
+  text-align: left;
+}
